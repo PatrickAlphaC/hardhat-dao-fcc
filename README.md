@@ -9,6 +9,7 @@
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
     - [Installation](#installation)
+    - [Optional Gitpod](#optional-gitpod)
   - [Usage](#usage)
     - [On-Chain Governance Example](#on-chain-governance-example)
     - [Off-Chain governance Example](#off-chain-governance-example)
@@ -128,6 +129,13 @@ If you want to deploy to a testnet:
 4. Add a `.env` file with the same contents of `.env.example`, but replaced with your variables.
 ![WARNING](https://via.placeholder.com/15/f03c15/000000?text=+) **WARNING** ![WARNING](https://via.placeholder.com/15/f03c15/000000?text=+)
 > DO NOT PUSH YOUR PRIVATE_KEY TO GITHUB
+
+
+### Optional Gitpod
+
+If you can't or don't want to run and install locally, you can work with this repo in Gitpod. If you do this, you can skip the `clone this repo` part.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/PatrickAlphaC/hardhat-dao-fcc)
 
 
 <!-- USAGE EXAMPLES -->
