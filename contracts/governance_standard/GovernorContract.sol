@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol
 import "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol";
 import "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol";
 import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
 contract GovernorContract is
   Governor,
@@ -55,7 +56,7 @@ contract GovernorContract is
   function getVotes(address account, uint256 blockNumber)
     public
     view
-    override(IGovernor, GovernorVotes)
+    override(IGovernor, Governor)
     returns (uint256)
   {
     return super.getVotes(account, blockNumber);
