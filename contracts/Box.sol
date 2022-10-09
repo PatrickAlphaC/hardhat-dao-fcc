@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+/**
+ * @title TimeLock.sol is the Owner of this contract.
+ */
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Box is Ownable {

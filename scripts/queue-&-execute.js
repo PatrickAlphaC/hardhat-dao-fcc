@@ -1,15 +1,15 @@
-import { ethers, network } from "hardhat"
-import {
+const { ethers, network } = require("hardhat")
+const {
   FUNC,
   NEW_STORE_VALUE,
   PROPOSAL_DESCRIPTION,
   MIN_DELAY,
   developmentChains,
-} from "../helper-hardhat-config"
-import { moveBlocks } from "../utils/move-blocks"
-import { moveTime } from "../utils/move-time"
+} = require("../helper-hardhat-config")
+const { moveBlocks } = require("../utils/move-blocks")
+const { moveTime } = require("../utils/move-time")
 
-export async function queueAndExecute() {
+async function queueAndExecute() {
   const args = [NEW_STORE_VALUE]
   const functionToCall = FUNC
   const box = await ethers.getContract("Box")
@@ -19,6 +19,7 @@ export async function queueAndExecute() {
 
   const governor = await ethers.getContract("GovernorContract")
   console.log("Queueing...")
+  // Queue function is in "governorTimelock.sol"
   const queueTx = await governor.queue([box.address], [0], [encodedFunctionCall], descriptionHash)
   await queueTx.wait(1)
 
