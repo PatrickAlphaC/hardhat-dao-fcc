@@ -2,6 +2,8 @@
 
 *This has been updated to work with Goerli over Rinkeby*
 
+> Need The Javascript Version? Grab it here -> [Dao in Javascript Repo](https://github.com/RohitKS7/dao-contracts)
+
 <div id="top"></div>
 
 - [DAO Template](#dao-template)
