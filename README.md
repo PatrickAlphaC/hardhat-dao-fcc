@@ -2,7 +2,7 @@
 
 *This has been updated to work with Goerli over Rinkeby*
 
-> Need The Javascript Version? Grab it here -> [Dao in Javascript Repo](https://github.com/RohitKS7/dao-contracts)
+> Need The Javascript Version? Grab it here -> [Dao in Javascript Repo](https://github.com/RohitKS7/hardhat-dao-fcc)
 
 <div id="top"></div>
 
