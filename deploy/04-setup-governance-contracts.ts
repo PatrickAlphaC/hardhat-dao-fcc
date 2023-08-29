@@ -14,15 +14,15 @@ const setupContracts: DeployFunction = async function (hre: HardhatRuntimeEnviro
   log("----------------------------------------------------")
   log("Setting up contracts for roles...")
   // would be great to use multicall here...
-  const proposerRole = await timeLock.PROPOSER_ROLE()
-  const executorRole = await timeLock.EXECUTOR_ROLE()
-  const adminRole = await timeLock.TIMELOCK_ADMIN_ROLE()
+  const proposerRole = ethers.id("PROPOSER_ROLE");
+  const executorRole = ethers.id("EXECUTOR_ROLE");
+  const adminRole = ethers.id("TIMELOCK_ADMIN_ROLE")
 
-  const proposerTx = await timeLock.grantRole(proposerRole, governor.address)
+  const proposerTx = await timeLock.getFunction("grantRole")(proposerRole, await governor.getAddress())
   await proposerTx.wait(1)
-  const executorTx = await timeLock.grantRole(executorRole, ADDRESS_ZERO)
+  const executorTx = await timeLock.getFunction("grantRole")(executorRole, ethers.ZeroAddress);
   await executorTx.wait(1)
-  const revokeTx = await timeLock.revokeRole(adminRole, deployer)
+  const revokeTx = await timeLock.getFunction("revokeRole")(adminRole, deployer)
   await revokeTx.wait(1)
   // Guess what? Now, anything the timelock wants to do has to go through the governance process!
 }
